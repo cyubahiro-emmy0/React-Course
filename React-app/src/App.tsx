@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div>
-      <Button color = "primary" onClick ={() => console.log("Submitted") }>Submit</Button>
+      <Button  onClick ={() => console.log("Submitted") }>Submit</Button>
       <ListGroup items={items} heading="Cities" onSelectItem={handleSelectItem}/>
       <Alert>
         Hello World.
