@@ -11,11 +11,11 @@ function App() {
 
   return (
     <div>
-      <Button  onClick ={() => console.log("Submitted") }>Submit</Button>
-      <ListGroup items={items} heading="Cities" onSelectItem={handleSelectItem}/>
       <Alert>
         Hello World.
       </Alert>
+      <Button  onClick ={() => console.log("Submitted") }>Submit</Button>
+      <ListGroup items={items} heading="Cities" onSelectItem={handleSelectItem}/>
     </div>
   );
 }
