@@ -6,6 +6,10 @@ import styled from 'styled-components';
 const List =styled.ul`
 list-style: none;
 padding: 0;
+`;
+
+const ListItem = styled.li`
+padding: 5px 0;
 `
 interface Props{
     items:string[];
@@ -24,7 +28,7 @@ function ListGroup( {items, heading,onSelectItem}: Props) {
       {items.length === 0 && <p>No item found</p>}
       <List className="list-group">
         {items.map((item, index) => (
-          <li
+          <ListItem
             className={
               selectedIndex === index
                 ? "list-group-item active"
@@ -37,7 +41,7 @@ function ListGroup( {items, heading,onSelectItem}: Props) {
             }}
           >
             {item}
-          </li>
+          </ListItem>
         ))}
       </List>
     </>
