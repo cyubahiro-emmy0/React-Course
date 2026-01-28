@@ -8,7 +8,11 @@ list-style: none;
 padding: 0;
 `;
 
-const ListItem = styled.li`
+interface ListItemProps {
+  active: boolean;
+}
+
+const ListItem = styled.li<ListItemProps>`
 padding: 5px 0;
 `
 interface Props{
@@ -29,6 +33,7 @@ function ListGroup( {items, heading,onSelectItem}: Props) {
       <List className="list-group">
         {items.map((item, index) => (
           <ListItem
+          active = {index === selectedIndex}
             className={
               selectedIndex === index
                 ? "list-group-item active"
