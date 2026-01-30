@@ -61,6 +61,8 @@ function App() {
     //     if (bug) bug.fixed = true;
     //   }),
     // );
+
+    setBugs(bugs.map(bug => bug.id === 1 ? { ...bug, title: 'Error handling'} : bug))
   };
 
   const handlePrice = () => {
