@@ -1,5 +1,8 @@
+let count = 0;
 function Message(){
-    return <h1>Hello World</h1>;
+    console.log("Message called", count);
+    count++;
+    return <h1>Hello World {count}</h1>;
 }
 
 export default Message;
