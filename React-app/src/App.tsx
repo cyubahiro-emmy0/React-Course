@@ -64,6 +64,14 @@ function App() {
     );
   };
 
+  const handlePrice = () => {
+    const newDrink = {
+      title: drink.title,
+      price : 6
+    }
+    setDrink(newDrink);
+  };
+
   return (
     <div>
       <BsFillCalendarFill />
@@ -83,6 +91,7 @@ function App() {
       ))}
       <button onClick={handleClick}>Click Me</button>
       <Message />
+      <button onClick={handlePrice}></button>
     </div>
   );
 }
