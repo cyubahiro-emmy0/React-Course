@@ -4,7 +4,6 @@ import Button from "./Components/Button";
 import { useState } from "react";
 import { BsFillCalendarFill } from "react-icons/bs";
 import { produce } from "immer";
-import Message from "./Message";
 
 function App() {
   const [alertVisible, setAlertVisibility] = useState(false);
