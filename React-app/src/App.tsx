@@ -65,7 +65,7 @@ function App() {
 
   const handlePrice = () => {
     const newDrink = {
-      title: drink.title,
+      ...drink,
       price : drink.price + 1
     }
     setDrink(newDrink);
