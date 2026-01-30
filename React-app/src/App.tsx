@@ -43,7 +43,11 @@ function App() {
 
     //Remove
     setTags(tags.filter(tag => tag !== 'happy'));
+
+    //Update
+    setTags(tags.map(tag => tag === 'happy' ? 'happiness' : tag));
   }
+
 
   const handleClick = () => {
     // setBugs(bugs.map(bug => bug.id === 1 ? { ...bug, fixed: true}))
