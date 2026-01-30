@@ -40,6 +40,9 @@ function App() {
   const handleTag = () => {
     //Add
     setTags([ ...tags, 'cheerful']);
+
+    //Remove
+    setTags(tags.filter(tag => tag !== 'happy'));
   }
 
   const handleClick = () => {
