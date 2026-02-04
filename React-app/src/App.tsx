@@ -85,6 +85,7 @@ function App() {
     <div>
       <BsFillCalendarFill />
       <NavBar cartItemsCount={cartItems.length}/>
+      <Cart cartItems={cartItems}/>
       {alertVisible && (
         <Alert onClose={() => setAlertVisibility(false)}>Hello World</Alert>
       )}
