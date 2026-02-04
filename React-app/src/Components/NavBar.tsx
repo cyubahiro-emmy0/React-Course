@@ -6,7 +6,7 @@ interface Props {
 
 const NavBar = ({cartItemsCount}: Props) => {
   return (
-    <div>NavBar</div>
+    <div>NavBar: {cartItemsCount}</div>
   )
 }
 
