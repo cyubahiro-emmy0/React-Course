@@ -2,6 +2,7 @@ import ListGroup from "./Components/ListGroup/";
 import Alert from "./Components/Alert";
 import Button from "./Components/Button";
 import NavBar from "./Components/NavBar";
+import Cart from "./Components/Cart";
 import { useState } from "react";
 import { BsFillCalendarFill } from "react-icons/bs";
 import { produce } from "immer";
