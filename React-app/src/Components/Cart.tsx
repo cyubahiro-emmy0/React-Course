@@ -12,7 +12,7 @@ const Cart = ({cartItems, onClear}: Props) => {
     <ul>
         {cartItems.map(item => <li key={item}>{item}</li>)}
     </ul>
-    <button onClick={onClear} color='secondary'>Clear</button> <br /> <br />
+    <button onClick={onClear} className='btn btn-danger'>Clear</button> <br /> <br />
     </>
   )
 }
