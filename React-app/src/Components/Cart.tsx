@@ -9,7 +9,7 @@ const Cart = ({cartItems}: Props) => {
     <>
     <div>Cart</div>
     <ul>
-        {cartItems.map(item => <li key={item}></li>)}
+        {cartItems.map(item => <li key={item}>{item}</li>)}
     </ul>
     </>
   )

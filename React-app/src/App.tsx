@@ -82,6 +82,7 @@ function App() {
   return (
     <div>
       <BsFillCalendarFill />
+      <NavBar/>
       {alertVisible && (
         <Alert onClose={() => setAlertVisibility(false)}>Hello World</Alert>
       )}
