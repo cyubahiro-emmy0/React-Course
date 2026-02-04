@@ -27,7 +27,7 @@ function App() {
       zipCode: 94111,
     },
   });
-  const p[cartItems, setCartItems] = useState(['Product1', 'Product2']);
+  const [cartItems, setCartItems] = useState(['Product1', 'Product2']);
   let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
 
   const handleSelectItem = (item: string) => {
