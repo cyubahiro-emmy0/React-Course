@@ -56,8 +56,13 @@ function App() {
     console.log(item);
   };
 
-  const handleQuantity = () => {
-    setCart({...cart, items: cart.items.map(item => {})});
+  const handleQuantity = (id: number, amount: number) => {
+    setCart({...cart, items: cart.items.map(item => {
+      if (item.id === id){
+        return {...item, quantity: Math.max(1, item.quantity + amount)};
+      }
+      return item;
+    })});
   };
 
   const handlePizza = () => {
