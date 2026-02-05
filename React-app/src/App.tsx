@@ -28,6 +28,8 @@ function App() {
     name: 'Spicy Pepperoni',
     toppings: ['Mushroom']
   });
+
+  const [cart, setCart] = useState();
   
   const [drink, setDrink] = useState({
     title: 'Americano',
