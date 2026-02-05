@@ -56,6 +56,8 @@ function App() {
     console.log(item);
   };
 
+  const handleQuantity = () => {};
+
   const handlePizza = () => {
     setPizza({...pizza, toppings: [...pizza.toppings, 'Cheese']})
   };
