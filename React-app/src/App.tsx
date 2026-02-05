@@ -48,6 +48,8 @@ function App() {
     console.log(item);
   };
 
+  const handlePizza = () => {};
+
   const handleEvent = () => {
     setCustomer({
       ...customer,
