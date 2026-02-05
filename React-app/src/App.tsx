@@ -50,6 +50,10 @@ function App() {
     });
   };
 
+  const handleGame = () => {
+    setGame({...game, player: {...game.player, name: 'Bob'}});
+  };
+
   const handleTag = () => {
     //Add
     setTags([ ...tags, 'cheerful']);
