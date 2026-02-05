@@ -49,7 +49,7 @@ function App() {
   };
 
   const handlePizza = () => {
-    setPizza({...pizza, toppings: [...pizza.toppings, 'Tailwind']})
+    setPizza({...pizza, toppings: [...pizza.toppings, 'Cheese']})
   };
 
   const handleEvent = () => {
