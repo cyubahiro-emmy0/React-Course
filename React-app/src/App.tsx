@@ -57,7 +57,7 @@ function App() {
   };
 
   const handleQuantity = () => {
-    setCart({...cart, items: [quantity: cart.it]});
+    setCart({...cart, items: cart.items.map(item => {})});
   };
 
   const handlePizza = () => {
