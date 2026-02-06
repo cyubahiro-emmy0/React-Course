@@ -1,32 +1,47 @@
 import { FormEvent, useState } from "react";
+import { useForm } from 'react-hook-form';
 
 const Form = () => {
-  const [person, setPerson] = useState({
-    name: "",
-    age: '',
-  });
-  //   const nameRef = useRef<HTMLInputElement>(null);
-  //   const ageRef = useRef<HTMLInputElement>(null);
-  //   const person = {name: '', age: 0};
-  const handleSubmit = (event: FormEvent) => {
-    event.preventDefault();
-    // if (nameRef.current !== null) person.name = nameRef.current.value;
-    // if (ageRef.current !== null) person.age = parseInt(ageRef.current.value);
+  
+  const {
+    //Initialization of the hook
+    register,
+    handleSubmit,
+    formState : {errors}
+  } = useForm<FormData>();
 
-     console.log(person); 
-  };
+  //Function runs if validation passes
+  const onSubmit = (data: FormData) => {
+    console.log('Form submitted successfully:', data);
+  }
+
+  //The use of controlled components
+//   const [person, setPerson] = useState({
+//     name: "",
+//     age: '',
+//   });
+//   //   const nameRef = useRef<HTMLInputElement>(null);
+//   //   const ageRef = useRef<HTMLInputElement>(null);
+//   //   const person = {name: '', age: 0};
+//   const handleSubmit = (event: FormEvent) => {
+//     event.preventDefault();
+//     // if (nameRef.current !== null) person.name = nameRef.current.value;
+//     // if (ageRef.current !== null) person.age = parseInt(ageRef.current.value);
+
+//      console.log(person); 
+//   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <div className="mb-3">
         <label htmlFor="name" className="form-label">
           Name
         </label>
         <input
-        {...person('name', {required: true, minLength: 3})}
-          onChange={(event) =>
-            setPerson({ ...person, name: event.target.value })
-          }
-          value={person.name}
+        {...register('name', {required: true, minLength: 3})}
+        //   onChange={(event) =>
+        //     setPerson({ ...person, name: event.target.value })
+        //   }
+        //   value={person.name}
           id="name"
           type="text"
           className="form-control"
