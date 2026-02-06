@@ -17,6 +17,7 @@ function App() {
     { id: 2, title: "Bug 2", fixed: false },
   ]);
 
+  /*
   const [tags, setTags] = useState(["happy", "exciting"]);
 
   const [game, setGame] = useState({
@@ -38,12 +39,14 @@ function App() {
       { id: 2, title: "Product 2", quantity: 1 },
     ],
   });
+  */
 
   const [drink, setDrink] = useState({
     title: "Americano",
     price: 6,
   });
 
+  /*
   const [customer, setCustomer] = useState({
     name: "John",
     address: {
@@ -51,13 +54,14 @@ function App() {
       zipCode: 94111,
     },
   });
+  */
   const [cartItems, setCartItems] = useState(["Product1", "Product2"]);
   let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
 
   const handleSelectItem = (item: string) => {
     console.log(item);
   };
-
+/*
   const handleQuantity = (id: number, amount: number) => {
     setCart({
       ...cart,
@@ -95,6 +99,7 @@ function App() {
     //Update
     setTags(tags.map((tag) => (tag === "happy" ? "happiness" : tag)));
   };
+  */
 
   const handleClick = () => {
     setBugs(bugs.map((bug) => (bug.id === 1 ? { ...bug, fixed: true } : bug)));
