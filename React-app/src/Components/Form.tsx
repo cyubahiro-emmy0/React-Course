@@ -1,6 +1,11 @@
 import { FormEvent, useState } from "react";
 import { useForm } from 'react-hook-form';
 
+interface FormData {
+    name: string;
+    age: number;
+}
+
 const Form = () => {
   
   const {
@@ -37,14 +42,14 @@ const Form = () => {
           Name
         </label>
         <input
-        {...register("name", {required: true, minLength: 3})}
+        {...register("name", {required: true, minLength: {value: 3, message: "Minimum length is 3(three) characters"}})}
         //   onChange={(event) =>
         //     setPerson({ ...person, name: event.target.value })
         //   }
         //   value={person.name}
           id="name"
           type="text"
-          className={`form-control ${errors.name ? "is-invalid" : ""}`}
+          className="form-control"
         />
       </div>
       <div className="mb-3">
@@ -52,13 +57,14 @@ const Form = () => {
           Age
         </label>
         <input
+        {...register("age", {required: "Age is required", min: 18})}
         //   onChange={(event) =>
         //     setPerson({ ...person, age: event.target.value })
         //   }
         //   value={person.age}
           id="age"
           type="number"
-          className={`form-control ${errors.name ? "is-invalid" : ""}`}
+          className="form-control"
         />
       </div>
       <button className="btn btn-primary" type="submit">
