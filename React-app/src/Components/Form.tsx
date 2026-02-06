@@ -37,14 +37,14 @@ const Form = () => {
           Name
         </label>
         <input
-        {...register('name', {required: true, minLength: 3})}
+        {...register("name", {required: true, minLength: 3})}
         //   onChange={(event) =>
         //     setPerson({ ...person, name: event.target.value })
         //   }
         //   value={person.name}
           id="name"
           type="text"
-          className="form-control"
+          className={`form-control ${errors.name ? "is-invalid" : ""}`}
         />
       </div>
       <div className="mb-3">
@@ -52,13 +52,13 @@ const Form = () => {
           Age
         </label>
         <input
-          onChange={(event) =>
-            setPerson({ ...person, age: event.target.value })
-          }
-          value={person.age}
+        //   onChange={(event) =>
+        //     setPerson({ ...person, age: event.target.value })
+        //   }
+        //   value={person.age}
           id="age"
           type="number"
-          className="form-control"
+          className={`form-control ${errors.name ? "is-invalid" : ""}`}
         />
       </div>
       <button className="btn btn-primary" type="submit">
