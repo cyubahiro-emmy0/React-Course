@@ -20,21 +20,22 @@ const Form = () => {
     console.log('Form submitted successfully:', data);
   }
 
-  //The use of controlled components
-//   const [person, setPerson] = useState({
-//     name: "",
-//     age: '',
-//   });
-//   //   const nameRef = useRef<HTMLInputElement>(null);
-//   //   const ageRef = useRef<HTMLInputElement>(null);
-//   //   const person = {name: '', age: 0};
-//   const handleSubmit = (event: FormEvent) => {
-//     event.preventDefault();
-//     // if (nameRef.current !== null) person.name = nameRef.current.value;
-//     // if (ageRef.current !== null) person.age = parseInt(ageRef.current.value);
+ /* The use of controlled components
+  const [person, setPerson] = useState({
+    name: "",
+    age: '',
+  });
+  //   const nameRef = useRef<HTMLInputElement>(null);
+  //   const ageRef = useRef<HTMLInputElement>(null);
+  //   const person = {name: '', age: 0};
+  const handleSubmit = (event: FormEvent) => {
+    event.preventDefault();
+    // if (nameRef.current !== null) person.name = nameRef.current.value;
+    // if (ageRef.current !== null) person.age = parseInt(ageRef.current.value);
 
-//      console.log(person); 
-//   };
+     console.log(person); 
+  };
+  */
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="mb-3">
@@ -43,10 +44,12 @@ const Form = () => {
         </label>
         <input
         {...register("name", {required: true, minLength: {value: 3, message: "Name must be atleast three(3) characters."}})}
-        //   onChange={(event) =>
-        //     setPerson({ ...person, name: event.target.value })
-        //   }
-        //   value={person.name}
+        /*
+        onChange={(event) =>
+             setPerson({ ...person, name: event.target.value })
+          }
+          value={person.name}
+        */
           id="name"
           type="text"
           className={`form-control ${errors.name ? "is-invalid" : ""}`}
@@ -60,15 +63,18 @@ const Form = () => {
         </label>
         <input
         {...register("age", {required: "Age is required", min: {value: 18, message: "You must be 18 years or older."}})}
-        //   onChange={(event) =>
-        //     setPerson({ ...person, age: event.target.value })
-        //   }
-        //   value={person.age}
+        /*
+        onChange={(event) =>
+            setPerson({ ...person, age: event.target.value })
+          }
+          value={person.age}
+         */
           id="age"
           type="number"
           className={`form-control ${errors.age ? "is-invalid" : ""}`}
         />
         {/* This is the message error for the invalid age input */}
+        {errors.age && <p className='text-danger'>{errors.age.message}</p>}
       </div>
       <button className="btn btn-primary" type="submit">
         Submit
