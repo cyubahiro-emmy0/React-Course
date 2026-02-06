@@ -29,7 +29,6 @@ const Form = () => {
           id="name"
           type="text"
           className="form-control"
-          required
         />
       </div>
       <div className="mb-3">
