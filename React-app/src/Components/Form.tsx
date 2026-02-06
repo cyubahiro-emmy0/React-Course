@@ -21,7 +21,7 @@ const Form = () => {
         <label htmlFor="name" className="form-label">
           Name
         </label>
-        <input  id="name" type="text" className="form-control" />
+        <input onChange={(event) => setPerson({...person, name: event.target.value})} id="name" type="text" className="form-control" />
       </div>
       <div className="mb-3">
         <label htmlFor="age" className="form-label">
