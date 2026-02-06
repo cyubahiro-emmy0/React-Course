@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+
 import { useForm } from 'react-hook-form';
 
 interface FormData {
@@ -49,7 +49,7 @@ const Form = () => {
         //   value={person.name}
           id="name"
           type="text"
-          className="form-control"
+          className={`form-control ${errors.name ? "is-invalid" : ""}`}
         />
       </div>
       <div className="mb-3">
@@ -64,7 +64,7 @@ const Form = () => {
         //   value={person.age}
           id="age"
           type="number"
-          className="form-control"
+          className={`form-control ${errors.age ? "is-invalid" : ""}`}
         />
       </div>
       <button className="btn btn-primary" type="submit">
