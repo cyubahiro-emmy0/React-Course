@@ -22,6 +22,7 @@ const Form = () => {
           Name
         </label>
         <input
+        {...person('name', {required: true, minLength: 3})}
           onChange={(event) =>
             setPerson({ ...person, name: event.target.value })
           }
