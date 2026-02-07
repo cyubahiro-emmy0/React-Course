@@ -159,6 +159,7 @@ function App() {
       {/* The handle price buttons section */}
       {drink.price}
       <button onClick={handlePrice}>Change Price</button>
+      {/* The expandable text where we can show the least or more text by clicking the buttons */}
       <ExpandableText maxChars={10}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus
         consequatur necessitatibus sint, voluptatum libero rerum eius enim
