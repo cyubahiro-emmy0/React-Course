@@ -135,6 +135,7 @@ function App() {
     <div>
       <BsFillCalendarFill /> {/*The use of icons*/}
       <NavBar cartItemsCount={cartItems.length} />
+      {/* The cart on the navigation bar and has clear button */}
       <Cart cartItems={cartItems} onClear={() => setCartItems([])} />
       {alertVisible && (
         <Alert onClose={() => setAlertVisibility(false)}>Hello World</Alert>
