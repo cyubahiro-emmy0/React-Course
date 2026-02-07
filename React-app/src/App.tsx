@@ -133,7 +133,7 @@ function App() {
 
   return (
     <div>
-      <BsFillCalendarFill />
+      <BsFillCalendarFill /> {/*The use of icons*/}
       <NavBar cartItemsCount={cartItems.length} />
       <Cart cartItems={cartItems} onClear={() => setCartItems([])} />
       {alertVisible && (
