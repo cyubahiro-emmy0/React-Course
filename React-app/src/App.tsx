@@ -143,6 +143,7 @@ function App() {
       )}
       {/* The button that works with the alert */}
       <Button onClick={() => setAlertVisibility(true)}>Submit</Button>
+      {/* The list of cities all over */}
       <ListGroup
         items={items}
         heading="Cities"
@@ -153,6 +154,7 @@ function App() {
           {bug.title} {bug.fixed ? "fixed" : "New"}
         </p>
       ))}
+      {/* Button that works with the bugs */}
       <button onClick={handleClick}>Click Me</button> <br /> <br />
       {drink.price}
       <button onClick={handlePrice}>Change Price</button>
