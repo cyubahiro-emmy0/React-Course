@@ -141,6 +141,7 @@ function App() {
       {alertVisible && (
         <Alert onClose={() => setAlertVisibility(false)}>Hello World</Alert>
       )}
+      {/* The button that works with the alert */}
       <Button onClick={() => setAlertVisibility(true)}>Submit</Button>
       <ListGroup
         items={items}
