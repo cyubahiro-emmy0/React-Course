@@ -137,6 +137,7 @@ function App() {
       <NavBar cartItemsCount={cartItems.length} />
       {/* The cart on the navigation bar and has clear button */}
       <Cart cartItems={cartItems} onClear={() => setCartItems([])} />
+      {/* The alert on the submit button on the page*/}
       {alertVisible && (
         <Alert onClose={() => setAlertVisibility(false)}>Hello World</Alert>
       )}
