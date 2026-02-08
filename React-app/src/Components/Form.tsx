@@ -2,6 +2,8 @@
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
+z.object({})
+
 interface FormData {
     name: string;
     age: number;
