@@ -50,7 +50,7 @@ const Form = () => {
           Name
         </label>
         <input
-        {...register("name", {required: true, minLength: {value: 3, message: "Name must be atleast three(3) characters."}})}
+        {...register("name")}
         /*
         onChange={(event) =>
              setPerson({ ...person, name: event.target.value })
