@@ -2,7 +2,9 @@
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
-z.object({})
+z.object({
+    name: z.string().min(3)
+})
 
 interface FormData {
     name: string;
