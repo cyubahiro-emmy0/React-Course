@@ -69,7 +69,7 @@ const Form = () => {
           Age
         </label>
         <input
-        {...register("age", {required: "Age is required", min: {value: 18, message: "You must be 18 years or older."}})}
+        {...register("age")}
         /*
         onChange={(event) =>
             setPerson({ ...person, age: event.target.value })
