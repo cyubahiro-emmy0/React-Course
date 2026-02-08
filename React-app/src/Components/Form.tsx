@@ -7,7 +7,7 @@ const schema =z.object({
     age: z.number().min(18)
 });
 
-z.infer<typeof schema>
+type FormData = z.infer<typeof schema>
 
 
 //Manual Validation
