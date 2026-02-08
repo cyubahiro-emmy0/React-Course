@@ -2,15 +2,12 @@
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
-z.object({
+const schema =z.object({
     name: z.string().min(3),
     age: z.number().min(18)
-})
+});
 
-interface FormData {
-    name: string;
-    age: number;
-}
+
 
 
 //Manual Validation
