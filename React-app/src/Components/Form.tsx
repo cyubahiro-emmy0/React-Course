@@ -8,10 +8,14 @@ const schema = z.object({
     .string()
     .min(1, { message: "Name is required" })
     .min(3, { message: "Name must be atleast 3 character(s)" }),
+  // Age as string: required + must be a number >= 18
   age: z
-    .number()
-    .refine((value) => !Number.isNaN(value), { message: "Age is required" })
-    .min(18, { message: "You must be 18 years or older" }),
+    .string()
+    .min(1, { message: "Age is required" })
+    .refine((val) => {
+      const num = Number(val);
+      return !Number.isNaN(num) && num >= 18;
+    }, { message: "You must be 18 years or older" }),
 });
 
 type FormData = z.infer<typeof schema>;
@@ -27,7 +31,9 @@ const Form = () => {
 
   //Function runs if validation passes
   const onSubmit = (data: FormData) => {
-    console.log("Form submitted successfully:", data);
+    // Convert age string to a number if you need it numerically
+    const ageNumber = Number(data.age);
+    console.log("Form submitted successfully:", { ...data, age: ageNumber });
   };
 
   /* The use of controlled components
@@ -72,7 +78,7 @@ const Form = () => {
           Age
         </label>
         <input
-          {...register("age", { valueAsNumber: true })}
+          {...register("age")}
           /*
         onChange={(event) =>
             setPerson({ ...person, age: event.target.value })
