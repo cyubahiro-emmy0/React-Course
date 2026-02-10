@@ -4,8 +4,16 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 //Schema validation
 const schema = z.object({
-  name: z.string().min(3, { message: "Name must be atleast 3 character(s)" }),
-  age: z.number().min(18, { message: "You must be 18 years or older" }),
+  // Show a specific message when empty, and another when too short
+  name: z
+    .string()
+    .min(1, { message: "Name is required" })
+    .min(3, { message: "Name must be atleast 3 character(s)" }),
+  // Treat empty age (NaN) as "required" before enforcing minimum age
+  age: z
+    .number()
+    .refine((value) => !Number.isNaN(value), { message: "Age is required" })
+    .min(18, { message: "You must be 18 years or older" }),
 });
 
 type FormData = z.infer<typeof schema>;
