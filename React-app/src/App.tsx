@@ -139,7 +139,7 @@ function App() {
 
   return (
     <div>
-      <ExpenseList expenses={}/>
+      <ExpenseList expenses={expenses} onDelete={(id) => console.log('Delete', id)}/>
       <BsFillCalendarFill /> {/*The use of icons*/}
       <NavBar cartItemsCount={cartItems.length} />
       {/* The cart on the navigation bar and has clear button */}
