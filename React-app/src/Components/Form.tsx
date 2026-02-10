@@ -95,8 +95,7 @@ const Form = () => {
         {errors.age && <p className="text-danger">{errors.age.message}</p>}
       </div>
       <button disabled={!isValid || isSubmitting} className="btn btn-primary" type="submit">
-        {/* Changing the text dynamically */}
-      {!isSubmitting? "Submitting ..." : "Submit"};
+        {!isSubmitting? "Submitting ..." : "Submit"};
       </button>
     </form>
   );
