@@ -8,6 +8,7 @@ import { BsFillCalendarFill } from "react-icons/bs";
 import { produce } from "immer";
 import ExpandableText from "./Components/ExpandableText";
 import Form from "./Components/Form";
+import ExpenseList from "./expense-tracker/components/ExpenseList";
 
 function App() {
   const [alertVisible, setAlertVisibility] = useState(false);
@@ -131,8 +132,14 @@ function App() {
     }
   };
 
+  const expenses = [
+    {id: 1, description: 'Saucepan', amount: 10, category: 'Utilities'},
+    {id: 2, description: 'Vegetables', amount: 20, category: 'Groceries'}
+  ]
+
   return (
     <div>
+      <ExpenseList expenses={}/>
       <BsFillCalendarFill /> {/*The use of icons*/}
       <NavBar cartItemsCount={cartItems.length} />
       {/* The cart on the navigation bar and has clear button */}
