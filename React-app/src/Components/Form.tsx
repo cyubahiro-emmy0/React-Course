@@ -97,6 +97,7 @@ const Form = () => {
       <button disabled={!isValid || isSubmitting} className="btn btn-primary" type="submit">
         Submit
       </button>
+      {/* Changing the text dynamically */}
     </form>
   );
 };
