@@ -1,4 +1,4 @@
-import { useForm , SubmitHandler} from "react-hook-form";
+import { useForm , SubmitHandler, FieldValues} from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -22,7 +22,7 @@ const Form = () => {
   } = useForm<FormData>({ resolver: zodResolver(schema), mode: "onChange" });
 
   //Function runs if validation passes
-  const onSubmit: SubmitHandler<FormData> = (data) => {
+  const onSubmit = (data : FieldValues) => {
     console.log("Form submitted successfully:", data);
   };
 
