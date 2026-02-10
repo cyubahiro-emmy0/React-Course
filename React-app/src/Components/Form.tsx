@@ -26,14 +26,16 @@ const Form = () => {
     //Initialization of the hook
     register,
     handleSubmit,
-    formState: { errors, isValid},
+    formState: { errors, isValid, isSubmitting},
   } = useForm<FormData>({ resolver: zodResolver(schema), mode: 'onChange' });
 
   //Function runs if validation passes
-  const onSubmit = (data: FormData) => {
+  const onSubmit = async  (data: FormData) => {
     // Convert age string to a number if you need it numerically
     const ageNumber = Number(data.age);
-    console.log("Form submitted successfully:", { ...data, age: ageNumber });
+    console.log("Sending to the server ...", { ...data, age: ageNumber });
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    console.log("Done!");
   };
 
   /* The use of controlled components
