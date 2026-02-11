@@ -9,6 +9,8 @@ import { produce } from "immer";
 import ExpandableText from "./Components/ExpandableText";
 import Form from "./Components/Form";
 import ExpenseList from "./expense-tracker/components/ExpenseList";
+import ExpenseFilter from "./expense-tracker/components/ExpenseFilter";
+import { BiCategory } from "react-icons/bi";
 
 function App() {
   const [alertVisible, setAlertVisibility] = useState(false);
@@ -139,6 +141,7 @@ function App() {
 
   return (
     <div>
+      <ExpenseFilter onSelectCategory={category => console.log(category)}/>
       <ExpenseList expenses={expenses} onDelete={(id) => setExpenses(expenses.filter((e) => e.id !== id))}/>
       <BsFillCalendarFill /> {/*The use of icons*/}
       <NavBar cartItemsCount={cartItems.length} />
