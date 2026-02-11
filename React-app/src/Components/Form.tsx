@@ -99,7 +99,7 @@ const Form = () => {
         className="btn btn-primary"
         type="submit"
       >
-        {isSubmitting ? "Submitting..." : "Submit"}
+        {isSubmitting ? "Submitting" : "Submit"}
       </button>
     </form>
   );
