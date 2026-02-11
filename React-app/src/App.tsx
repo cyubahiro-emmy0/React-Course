@@ -141,7 +141,7 @@ function App() {
 
   const [selectedCategory, setSelectedCategory] = useState('');
   
-  const 
+  const visibleExpenses = selectedCategory ? expenses.filter(e => e.category === selectedCategory) : expenses;
 
   return (
     <div>
