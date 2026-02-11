@@ -139,6 +139,8 @@ function App() {
     {id: 2, description: 'Vegetables', amount: 20, category: 'Groceries'}
   ]);
 
+  const [selectedCategory, setSelectedCategory] = useState('');
+
   return (
     <div>
       <div className="mb-3">
