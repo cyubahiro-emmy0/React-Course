@@ -141,7 +141,9 @@ function App() {
 
   return (
     <div>
-      <ExpenseFilter onSelectCategory={category => console.log(category)}/>
+      <div className="mb-3">
+        <ExpenseFilter onSelectCategory={category => console.log(category)}/>
+      </div>
       <ExpenseList expenses={expenses} onDelete={(id) => setExpenses(expenses.filter((e) => e.id !== id))}/>
       <BsFillCalendarFill /> {/*The use of icons*/}
       <NavBar cartItemsCount={cartItems.length} />
