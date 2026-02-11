@@ -1,6 +1,7 @@
 
 interface Props{
     onSelectCategory: (category: string) => void;
+    selectedCategory: string;
 }
 
 const ExpenseFilter = ({onSelectCategory}: Props) => {
