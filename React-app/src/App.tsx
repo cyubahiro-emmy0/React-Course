@@ -141,14 +141,14 @@ function App() {
 
   const [selectedCategory, setSelectedCategory] = useState('');
   
-  const visibleExpenses = selectedCategory ? expenses.filter(e => e.category === selectedCategory) : expenses;
+  const visibleExpenses = selectedCategory ? expenses.filter((e) => e.category === selectedCategory) : expenses;
 
   return (
     <div>
       <div className="mb-3">
         <ExpenseFilter onSelectCategory={(category) => setSelectedCategory(category)}/>
       </div>
-      <ExpenseList expenses={expenses} onDelete={(id) => setExpenses(expenses.filter((e) => e.id !== id))}/>
+      <ExpenseList expenses={visibleExpenses} onDelete={(id) => setExpenses(expenses.filter((e) => e.id !== id))}/>
       <BsFillCalendarFill /> {/*The use of icons*/}
       <NavBar cartItemsCount={cartItems.length} />
       {/* The cart on the navigation bar and has clear button */}
