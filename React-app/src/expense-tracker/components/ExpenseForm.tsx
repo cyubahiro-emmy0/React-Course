@@ -16,9 +16,10 @@ const ExpenseForm = () => {
       <div className="mb-3">
         <label htmlFor="category" className="form-label">Category</label>
         <select  id="category" className="form-select">
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
+            <option value="">All Categories</option>
+            <option value="Groceries">Groceries</option>
+            <option value="Utilities">Utilities</option>
+            <option value="Entertainment">Entertainment</option>
         </select>
       </div>
     </form>
