@@ -1,11 +1,14 @@
-import {useForm} from "react-hook-form";
+import { useForm } from "react-hook-form";
 
 const ExpenseForm = () => {
   return (
     <form>
-        .mb-3
+      <div className="mb-3">
+        <label htmlFor="description" className="form-label">Description</label>
+        <input id="description"type="text" className="form-control" />
+      </div>
     </form>
-  )
-}
+  );
+};
 
-export default ExpenseForm
+export default ExpenseForm;
