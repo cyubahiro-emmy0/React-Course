@@ -3,7 +3,7 @@ import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod";
 
 const schema = z.object({
-  description: z. string().min
+  description: z. string().min(1, {message: "Description is required"}),
 });
 
 
