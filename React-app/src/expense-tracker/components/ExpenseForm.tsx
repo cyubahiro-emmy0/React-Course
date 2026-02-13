@@ -1,6 +1,7 @@
 import { categories } from "../../App";
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
 
 const schema = z.object({
   description: z. string().min(1, {message: "Description is required"}),
@@ -11,7 +12,11 @@ const schema = z.object({
 type ExpenseFormData = z.infer<typeof schema>
 
 const FormData = () => {
-  const{}
+  const{
+    register,
+    handleSubmit,
+    formState: {errors},
+  } = useForm
 }
 
 
