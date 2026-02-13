@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 const schema = z.object({
   description: z. string().min(1, {message: "Description is required"}),
-  amount: z.string().min(1, {message: "Amount is required"})
+  amount: z.number({invalid_type_error: "Age is required"}).positive({message: "Amount must be greater than 0."})
 });
 
 
