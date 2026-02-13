@@ -4,8 +4,15 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 const schema = z.object({
   description: z. string().min(1, {message: "Description is required"}),
-  amount: z.number({invalid_type_error: "Age is required"}).positive({message: "Amount must be greater than 0."})
+  amount: z.number({invalid_type_error: "Age is required"}).positive({message: "Amount must be greater than 0."}),
+  category: z.string().min(1, {message: "Category is required"})
 });
+
+type ExpenseFormData = z.infer<typeof schema>
+
+const FormData = () => {
+  const{}
+}
 
 
 const ExpenseForm = () => {
