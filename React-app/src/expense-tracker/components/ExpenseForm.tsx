@@ -2,7 +2,9 @@ import { categories } from "../../App";
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod";
 
-const schema = z.object({});
+const schema = z.object({
+  description: z. string()
+});
 
 
 const ExpenseForm = () => {
