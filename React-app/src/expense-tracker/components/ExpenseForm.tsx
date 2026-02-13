@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 const schema = z.object({
   description: z. string().min(1, {message: "Description is required"}),
+  amount: z.string().min(1, {message: "Amount is required"})
 });
 
 
