@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 const schema = z.object({
   description: z.string().min(1, { message: "Description is required" }),
   amount: z
-    .number({ invalid_type_error: "Age is required" })
+    .number({ invalid_type_error: "Amount is required" })
     .positive({ message: "Amount must be greater than 0." }),
   category: z.string().min(1, { message: "Category is required" }),
 });
@@ -37,6 +37,7 @@ const onSubmit = (data: ExpenseFormData) => {
           Description
         </label>
         <input id="description" type="text" className="form-control" {...register("description")} />
+        {errors.description && <p className="text-danger">{errors.message}</p>}
       </div>
       <div className="mb-3">
         <label htmlFor="amount" className="form-label">
