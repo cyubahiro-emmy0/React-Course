@@ -44,6 +44,7 @@ const onSubmit = (data: ExpenseFormData) => {
           Amount
         </label>
         <input id="amount" type="number" className="form-control" {...register("amount", {valueAsNumber: true})}/>
+        {errors.amount && <p className="text-danger">{errors.amount.message}</p>}
       </div>
       <div className="mb-3">
         <label htmlFor="category" className="form-label">
