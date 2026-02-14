@@ -42,7 +42,7 @@ const onSubmit = (data: ExpenseFormData) => {
         <label htmlFor="amount" className="form-label">
           Amount
         </label>
-        <input id="amount" type="number" className="form-control" />
+        <input id="amount" type="number" className="form-control" {...register("amount", {valueAsNumber: true})}/>
       </div>
       <div className="mb-3">
         <label htmlFor="category" className="form-label">
