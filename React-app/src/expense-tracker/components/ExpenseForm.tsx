@@ -37,7 +37,7 @@ const onSubmit = (data: ExpenseFormData) => {
           Description
         </label>
         <input id="description" type="text" className="form-control" {...register("description")} />
-        {errors.description && <p className="text-danger">{errors.message}</p>}
+        {errors.description && <p className="text-danger">{errors.description.message}</p>}
       </div>
       <div className="mb-3">
         <label htmlFor="amount" className="form-label">
