@@ -5,8 +5,8 @@ import { useForm } from "react-hook-form";
 
 const schema = z.object({
   description: z.string().min(1, { message: "Description is required" }),
-  amount: z.coerce
-    .number({ message: "Amount is required" })
+  amount: z
+    .number({ invalid_type_error: "Amount is required" })
     .positive({ message: "Amount must be greater than 0." }),
   category: z.string().min(1, { message: "Category is required" }),
 });
@@ -44,7 +44,7 @@ const onSubmit = (data: ExpenseFormData) => {
           Amount
         </label>
         <input id="amount" type="number" className="form-control" {...register("amount", {valueAsNumber: true})}/>
-        {errors.amount && <p className="text-danger">{errors.amount.message}</p>}
+        {errors.amount && <p className="">{errors.amount.message}</p>}
       </div>
       <div className="mb-3">
         <label htmlFor="category" className="form-label">
