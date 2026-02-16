@@ -36,7 +36,7 @@ const ExpenseForm = () => {
         <input
           id="description"
           type="text"
-          className="form-control"
+          className={`form-control ${errors.description ? "is-invalid" : ""}`}
           {...register("description")}
         />
         {errors.description && (
@@ -50,7 +50,7 @@ const ExpenseForm = () => {
         <input
           id="amount"
           type="number"
-          className="form-control"
+          className={`form-control ${errors.amount ? "is-invalid" : ""}`}
           {...register("amount", { valueAsNumber: true })}
         />
         {errors.amount && (
@@ -70,7 +70,7 @@ const ExpenseForm = () => {
           ))}
         </select>
       </div>
-      <button disabled={isValid || isSubmitting} className="btn btn-primary">
+      <button disabled={isValid || isSubmitting} className="btn btn-primary" type="submit">
         {isSubmitting ? "Submitting..." : "Submit"}
       </button>
     </form>

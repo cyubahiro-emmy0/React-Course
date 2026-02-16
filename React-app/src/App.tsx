@@ -12,7 +12,7 @@ import ExpenseList from "./expense-tracker/components/ExpenseList";
 import ExpenseFilter from "./expense-tracker/components/ExpenseFilter";
 import ExpenseForm from "./expense-tracker/components/ExpenseForm";
 
-export const categories = ['Groceries', 'Utilities', 'Entertainment'];
+export const categories = ["Groceries", "Utilities", "Entertainment"];
 
 function App() {
   const [alertVisible, setAlertVisibility] = useState(false);
@@ -66,7 +66,7 @@ function App() {
   const handleSelectItem = (item: string) => {
     console.log(item);
   };
-/*
+  /*
   const handleQuantity = (id: number, amount: number) => {
     setCart({
       ...cart,
@@ -136,22 +136,32 @@ function App() {
     }
   };
 
-  const [expenses,setExpenses]= useState ([
-    {id: 1, description: 'Saucepan', amount: 10, category: 'Utilities'},
-    {id: 2, description: 'Vegetables', amount: 20, category: 'Groceries'}
+  const [expenses, setExpenses] = useState([
+    { id: 1, description: "Saucepan", amount: 10, category: "Utilities" },
+    { id: 2, description: "Vegetables", amount: 20, category: "Groceries" },
   ]);
 
-  const [selectedCategory, setSelectedCategory] = useState('');
-  
-  const visibleExpenses = selectedCategory ? expenses.filter((e) => e.category === selectedCategory) : expenses;
+  const [selectedCategory, setSelectedCategory] = useState("");
+
+  const visibleExpenses = selectedCategory
+    ? expenses.filter((e) => e.category === selectedCategory)
+    : expenses;
 
   return (
     <div>
-      <ExpenseForm/>
-      <div className="mb-3">
-        <ExpenseFilter selectedCategory={selectedCategory} onSelectCategory={(category) => setSelectedCategory(category)}/>
+      <div className="mb-5">
+        <ExpenseForm />
       </div>
-      <ExpenseList expenses={visibleExpenses} onDelete={(id) => setExpenses(expenses.filter((e) => e.id !== id))}/>
+      <div className="mb-3">
+        <ExpenseFilter
+          selectedCategory={selectedCategory}
+          onSelectCategory={(category) => setSelectedCategory(category)}
+        />
+      </div>
+      <ExpenseList
+        expenses={visibleExpenses}
+        onDelete={(id) => setExpenses(expenses.filter((e) => e.id !== id))}
+      />
       <BsFillCalendarFill /> {/*The use of icons*/}
       <NavBar cartItemsCount={cartItems.length} />
       {/* The cart on the navigation bar and has clear button */}
@@ -192,7 +202,7 @@ function App() {
         temporibus pariatur excepturi, reiciendis error reprehenderit quidem
         veritatis in ex autem numquam et dolores voluptate, eos dolor natus?
       </ExpandableText>
-      <Form/>
+      <Form />
     </div>
   );
 }
