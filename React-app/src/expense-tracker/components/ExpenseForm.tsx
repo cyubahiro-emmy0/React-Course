@@ -3,9 +3,10 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 
+
 const schema = z.object({
   description: z.string().min(1, { message: "Description is required" }),
-  amount: z.number().positive({ message: "Amount is required" }),
+  amount: z.number().min(0.01, {message: "Amount is required"}).positive({ message: "Amount must be atleast 1" }),
   category: z.string().min(1, { message: "Category is required" }),
 });
 
@@ -70,7 +71,7 @@ const ExpenseForm = () => {
           ))}
         </select>
       </div>
-      <button disabled={isValid || isSubmitting} className="btn btn-primary" type="submit">
+      <button disabled={!isValid || isSubmitting} className="btn btn-primary" type="submit">
         {isSubmitting ? "Submitting..." : "Submit"}
       </button>
     </form>
