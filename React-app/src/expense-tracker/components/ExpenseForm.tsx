@@ -5,8 +5,7 @@ import { useForm } from "react-hook-form";
 
 const schema = z.object({
   description: z.string().min(1, { message: "Description is required" }),
-  amount: z.number()
-    .positive({ message: "Amount is required" }),
+  amount: z.number().positive({ message: "Amount is required" }),
   category: z.string().min(1, { message: "Category is required" }),
 });
 
@@ -17,7 +16,7 @@ const ExpenseForm = () => {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors, isValid, isSubmitting },
   } = useForm<ExpenseFormData>({
     resolver: zodResolver(schema),
     mode: "onChange",
@@ -71,7 +70,9 @@ const ExpenseForm = () => {
           ))}
         </select>
       </div>
-      <button className="btn btn-primary">Submit</button>
+      <button disabled={isValid || isSubmitting} className="btn btn-primary">
+        {isSubmitting ? "Submitting..." : "Submit"}
+      </button>
     </form>
   );
 };
