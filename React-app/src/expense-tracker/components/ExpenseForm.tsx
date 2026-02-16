@@ -5,9 +5,11 @@ import { useForm } from "react-hook-form";
 
 
 const schema = z.object({
-  description: z.string().min(1, { message: "Description is required" }),
-  amount: z.number().min(0.01, {message: "Amount is required"}).max(100_000,{ message: "Amount must be atleast 1" }),
-  category: z.enum(categories),
+  description: z.string().min(1, { message: "Description is required" }).max(100, {message: "Description must be atleast 3 characters."}),
+  amount: z.number({invalid_type_error: "Amount is required"}).min(0.01, {message: "Amount is required"}).max(100_000,{ message: "Amount must be atleast 1" }),
+  category: z.enum(categories, {
+    errorMap: () => ({message: "Category is required"})
+  }),
 });
 
 type ExpenseFormData = z.infer<typeof schema>;
